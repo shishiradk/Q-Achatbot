@@ -1,4 +1,4 @@
- 
+
 
 import streamlit as st
 from langchain_groq import ChatGroq
@@ -21,8 +21,8 @@ prompt = ChatPromptTemplate.from_messages(
  ]
 )
 
-def generate_response(question, model, temperature):
- llm = ChatGroq(model_name=model, temperature=temperature)
+def generate_response(question, model, temperature, api_key):
+ llm = ChatGroq(model_name=model, temperature=temperature, api_key=api_key)
  output_parser = StrOutputParser()
  chain = prompt | llm | output_parser
  answer = chain.invoke({'question': question})
@@ -38,17 +38,20 @@ model = st.sidebar.selectbox("Select Groq model", models)
 ## Adjust response parameter
 temperature = st.sidebar.slider("Temperature", min_value=0.0, max_value=1.0, value=0.7)
 
+## API Key
+api_key = st.sidebar.text_input("Enter your Groq API Key:", type="password")
+
 ## Main interface for user input
 st.write("Go ahead and ask any question")
 user_input = st.text_input("You:")
 
-## API Key
-api_key = st.sidebar.text_input("Enter your Groq API Key:", type="password")
-
 if user_input and api_key:
- response = generate_response(user_input, model, temperature)
+ try:
+ response = generate_response(user_input, model, temperature, api_key)
  st.write(response)
-elif user_input:
+ except Exception as e:
+ st.error(f"An error occurred: {e}")
+elif user_input and not api_key:
  st.warning("Please enter the Groq API Key in the sidebar")
 else:
  st.write("Please provide the user input")

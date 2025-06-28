@@ -54,7 +54,7 @@ if user_input and api_key:
 
 elif user_input:
     st.warning("Please enter the OPen AI aPi Key in the sider bar")
-else:
+else: 
     st.write("Please provide the user input")
 
 
