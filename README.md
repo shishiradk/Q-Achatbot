@@ -149,8 +149,10 @@ This project is open-sourced under the **MIT License**. See [`LICENSE`](./LICENS
 # Q-Achatbot
 
 <img width="952" alt="image" src="https://github.com/user-attachments/assets/8fadc68a-68d6-43f6-a6bc-46be63aa55e1" />
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/98f29fb2-00a7-4b4d-aff4-709ab9a2b9dc" />
-<img width="950" alt="image" src="https://github.com/user-attachments/assets/80fe18e5-20a6-4fe1-b31e-eac4b37b22eb" />
+
+---
+
+
 
 
 
