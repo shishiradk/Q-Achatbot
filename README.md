@@ -86,14 +86,16 @@ The chatbot will return a response from the chosen LLM based on your input.
 
 ```
 Q-Achatbot/
-├── app.py                # Main chatbot interface
-├── .env                  # API keys (not committed)
-├── requirements.txt      # Dependencies list
-├── models/
-│   └── llm_handler.py    # LLM routing logic
-├── utils/
-│   └── config.py         # Environment and config utilities
-└── README.md             # Project documentation
+├── app.py
+├── ollama
+│   └── app.py
+├── groq
+│   └── app.py
+├── openai
+│   └── app.py            
+├── .env                  
+├── requirements.txt        
+└── README.md             
 ```
 
 ---
